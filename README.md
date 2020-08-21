@@ -1,6 +1,7 @@
 # Sudoku
 Sudoku game in Java.
-This is a sudoku game software developed in Java. The entire development video with explanation of each and every part is availble in my YouTube Channel [iTech Coding]>
+This is a sudoku game software developed in Java. The entire development video with explanation of each and every part is availble in my YouTube Channel [iTech Coding](https://www.youtube.com/channel/UCVpv5p66RhBuG3HaWtdmDbw).
+
 
 ### Features
 * Start a new Game
