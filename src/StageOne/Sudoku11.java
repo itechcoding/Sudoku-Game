@@ -1,6 +1,5 @@
 package StageOne;
 
-import Modules.Classes;
 import Modules.Classes1;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -14,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Sudoku1 extends JFrame {
+public class Sudoku11 extends JFrame {
 
     JPanel panelA, panelB, panelC,
             panelD, panelE, panelF,
@@ -62,7 +61,7 @@ public class Sudoku1 extends JFrame {
     /*
     COnstructor
      */
-    public Sudoku1() {
+    public Sudoku11() {
         setSize(364, 350);
         setTitle("Level 1");
         setResizable(false);
@@ -101,11 +100,6 @@ public class Sudoku1 extends JFrame {
         confirm = new JMenuItem("Confirm");
         confirm.addActionListener((ActionEvent evt) -> {
             confirmActionPerformed(evt);
-        });
-
-        f1 = new JMenuItem("Help");
-        f1.addActionListener((ActionEvent evt) -> {
-            // To do help 
         });
 
         stage1lev1 = new JMenuItem("Level 1");
@@ -162,6 +156,11 @@ public class Sudoku1 extends JFrame {
         stage5lev8 = new JMenuItem("Level 8");
         stage5lev9 = new JMenuItem("Level 9");
         stage5lev10 = new JMenuItem("Level 10");
+
+        f1 = new JMenuItem("Help");
+        f1.addActionListener((ActionEvent evt) -> {
+            // To do help 
+        });
 //     Create Panels
         STAGEONE = new JMenu("Stage 1");
         STAGEONE.add(stage1lev1);
@@ -447,11 +446,9 @@ public class Sudoku1 extends JFrame {
 
         /**
          * We have added our panels but cannot be seen because their background
-         * is colorless Lets create a method to style our panels and Fields.
-         *
+         * is colorless. Lets create a method to style our panels
          */
         PLAY();
-
         java.awt.Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
@@ -461,7 +458,7 @@ public class Sudoku1 extends JFrame {
     }
 
     public static void main(String[] args) {
-        new Sudoku1();
+        new Sudoku11();
     }
 
     private void exitActionPerformed(ActionEvent evt) {
@@ -499,7 +496,7 @@ public class Sudoku1 extends JFrame {
         };
 
         // Lets create a class to be reused to reset any given list (textfields)
-        Classes.RESET(list);
+        Classes1.RESET(list);
 
     }
 
@@ -518,12 +515,11 @@ public class Sudoku1 extends JFrame {
             panelD, panelE, panelF,
             panelG, panelH, panelI
         };
-
         /**
          * Lets create a method in class 'classes' to style panels of level1 and
          * we pass an array of panels as parameters
          */
-        Classes.JPANEL_LEVEL1(panel);
+        Classes1.JPANEL_LEVEL1(panel);
 
         /**
          * Lets create a layout to this panels Each panel will require 9
@@ -531,7 +527,77 @@ public class Sudoku1 extends JFrame {
          * will create this in our classes file // Now this will work when we
          * add the labels/fields.
          */
-        Classes.JPANEL_LAYOUT(panel);
+        Classes1.JPANEL_LAYOUT(panel);
+        ;
 
+        /**
+         * Lets create a method to style our labels Our method will require an
+         * array of labels as a parameter
+         */
+        JLabel[] label = {
+            panelAlabel4, panelAlabel6, panelAlabel7,
+            panelBlabel5, panelBlabel7,
+            panelClabel1, panelClabel4, panelClabel5,
+            panelDlabel5, panelDlabel7, panelDlabel8,
+            panelElabel4, panelElabel7, panelElabel9,
+            panelFlabel2, panelFlabel3, panelFlabel4, panelFlabel5, panelFlabel6, panelFlabel8,
+            panelGlabel1, panelGlabel3, panelGlabel4, panelGlabel5, panelGlabel8, panelGlabel9,
+            panelHlabel1, panelHlabel7, panelHlabel8,
+            panelIlabel4, panelIlabel5, panelIlabel7
+        };
+
+        Classes1.LABEL_PROPS(label);
+
+        /**
+         * Lets create a method to style our text fields Our method will require
+         * an array of textfields as a parameter
+         */
+        JTextField[] textfields = {
+            panelAtextField1, panelAtextField2, panelAtextField3,
+            panelAtextField5, panelAtextField8, panelAtextField9,
+            panelBtextField1, panelBtextField2, panelBtextField3,
+            panelBtextField4, panelBtextField5, panelBtextField6,
+            panelBtextField8, panelBtextField9,
+            panelCtextField2, panelCtextField3, panelCtextField6,
+            panelCtextField7, panelCtextField8, panelCtextField9,
+            panelDtextField1, panelDtextField2, panelDtextField3,
+            panelDtextField4, panelDtextField6, panelDtextField9,
+            panelEtextField1, panelEtextField2, panelEtextField3,
+            panelEtextField5, panelEtextField6, panelEtextField8,
+            panelFtextField1, panelFtextField7, panelFtextField9,
+            panelGtextField2, panelGtextField6, panelGtextField7,
+            panelHtextField2, panelHtextField3, panelHtextField4,
+            panelHtextField5, panelHtextField6, panelHtextField9,
+            panelItextField1, panelItextField2, panelItextField3,
+            panelItextField6, panelItextField9, panelItextField8
+        };
+
+        Classes1.TEXTFIELD_PROPS(textfields);
+
+        /**
+         * Lets create a method to style our menuitems Our method will require
+         * an array of menuitems as a parameter
+         */
+        JMenuItem[] menuitem = {
+            exit, f1, next, previous, reset, confirm,
+            stage1lev1, stage1lev2, stage1lev3, stage1lev4, stage1lev5, stage1lev6, stage1lev7, stage1lev8, stage1lev9, stage1lev10,
+            stage2lev1, stage2lev2, stage2lev3, stage2lev4, stage2lev5, stage2lev6, stage2lev7, stage2lev8, stage2lev9, stage2lev10,
+            stage3lev1, stage3lev2, stage3lev3, stage3lev4, stage3lev5, stage3lev6, stage3lev7, stage3lev8, stage3lev9, stage3lev10,
+            stage4lev1, stage4lev2, stage4lev3, stage4lev4, stage4lev5, stage4lev6, stage4lev7, stage4lev8, stage4lev9, stage4lev10,
+            stage5lev1, stage5lev2, stage5lev3, stage5lev4, stage5lev5, stage5lev6, stage5lev7, stage5lev8, stage5lev9, stage5lev10
+        };
+
+        Classes1.LEVELS_PROPS(menuitem);
+
+        /**
+         * Method to style our JMenus
+         */
+        JMenu[] jmenus = {
+            EXIT, GAME, CONFIRM, RESET,
+            STAGE, F1, STAGEONE, STAGETWO, STAGETHREE, STAGEFOUR, STAGEFIVE
+        };
+
+        Classes1.JMENU_FOREGROUND(jmenus);
     }
+
 }
