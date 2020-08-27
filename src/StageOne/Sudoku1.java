@@ -1,7 +1,6 @@
 package StageOne;
 
 import Modules.Classes;
-import Modules.Classes1;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;

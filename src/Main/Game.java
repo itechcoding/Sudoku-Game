@@ -1,6 +1,7 @@
 package Main;
 
 import Help.Help;
+import Modules.Classes;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -67,6 +68,7 @@ public class Game extends JFrame {
 //        Set our frame to visible
         this.setVisible(true);
 
+        PLAY();
         // Lets make the frame to appear at the center of the screen after running
         java.awt.Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
@@ -75,7 +77,9 @@ public class Game extends JFrame {
 
     }
 
-      /** LETS CREATE OUR MAIN CLASS. */
+    /**
+     * LETS CREATE OUR MAIN CLASS.
+     */
     public static void main(String[] args) {
         Game game = new Game();
         game.setVisible(true);
@@ -87,11 +91,11 @@ public class Game extends JFrame {
     }
 
     private void HelpAction(ActionEvent evt) {
-        
+
         Help hep = new Help();
         hep.setVisible(true);
-       hep.setAlwaysOnTop(true);
-        
+        hep.setAlwaysOnTop(true);
+
     }
 
     private void challengeAction(ActionEvent evt) {
@@ -104,4 +108,14 @@ public class Game extends JFrame {
         // To do later
     }
 
+    private void PLAY() {
+        JButton[] but = {
+            easy, help, challenge, author};
+        JPanel[] panel = {
+            panelA, panelB, panelC, panelD
+        };
+        Classes.JPANEL_GAME(panel);
+        Classes.BUTTONS_HOME(but);
+    }
 }
+
