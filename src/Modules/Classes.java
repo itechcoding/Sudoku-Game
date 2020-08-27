@@ -104,6 +104,9 @@ public class Classes {
     for(int i = 0; i < but.length; i++){
         but[i].setForeground(blue);
         but[i].setFont(handwriting);
+        but[i].setBackground(cyan);
+        but[i].setFont(elephant);
+        but[i].setBorderPainted(false);
     }
     }
 
